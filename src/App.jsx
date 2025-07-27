@@ -8,15 +8,17 @@ import SignUp from "./pages/SignUp";
 import MyTickets from "./pages/MyTickets";
 import NotFound from "./pages/NotFound";
 import Layout from "./Layout";
+import CreateEvents from "./pages/CreateEvents";
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="events" element={<Events />} />
-        <Route path="event-detail" element={<EventDetail />} />
-        <Route path="my-tickets" element={<MyTickets />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/events/:id" element={<EventDetail />} />
+        <Route path="/my-tickets" element={<MyTickets />} />
+        <Route path="/create-event" element={<CreateEvents />} />
       </Route>
       {/* Standalone routes (no nav bar) */}
       <Route path="/login" element={<Login />} />

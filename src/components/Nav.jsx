@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
-const Nav = () => {
-  const [isLoggedIn, setLoggedIn] = useState(true);
-
+const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3 position-sticky top-0">
       <Link className="navbar-brand" to="/">
         Even<span>t</span>ickets
       </Link>
@@ -60,7 +58,7 @@ const Nav = () => {
             <li className="nav-item">
               <button
                 className="btn btn-outline-light"
-                onClick={() => setLoggedIn(false)}
+                onClick={() => setIsLoggedIn(false)}
               >
                 Logout
               </button>
